@@ -1,1 +1,1 @@
-# Event-Board
+# event board

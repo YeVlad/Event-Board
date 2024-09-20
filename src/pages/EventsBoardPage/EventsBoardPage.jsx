@@ -16,11 +16,19 @@ const EventsBoardPage = () => {
 
   useEffect(() => {
     dispatch(fetchEvents(page));
-  }, [dispatch]);
+  }, [dispatch, page]);
 
   const fetchedEvents = useSelector(selectEvents).data;
 
   const isLoading = useSelector(selectIsEventsLoading);
+
+  function setNextPage() {
+    setPage(page + 1);
+  }
+
+  function setPrevPage() {
+    setPage(page - 1);
+  }
 
   return (
     <>
@@ -29,8 +37,13 @@ const EventsBoardPage = () => {
         <p>Wait pls</p>
       ) : (
         <>
-          <PagSystem />
+          <PagSystem
+            page={page}
+            setNextPage={setNextPage}
+            setPrevPage={setPrevPage}
+          />
           <EventsList fetchedEvents={fetchedEvents} />
+          {page != 1 && fetchedEvents.length == 0 && <h2>Go back pls :)</h2>}
         </>
       )}
     </>

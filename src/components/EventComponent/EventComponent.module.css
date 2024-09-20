@@ -1,0 +1,16 @@
+.event_card {
+  border: 2px solid black;
+
+  min-width: 200px;
+
+  padding: 20px;
+}
+
+.event_name {
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}

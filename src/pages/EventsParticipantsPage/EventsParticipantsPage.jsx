@@ -1,9 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import NameOfThePage from "../../components/NameOfThePage/NameOfThePage";
 import ParticipantsList from "../../components/ParticipantsList/ParticipantsList";
 import { useEffect } from "react";
 import { fetchParticipants } from "../../redux/participants/operations";
-import { selectParticipants } from "../../redux/participants/selectors";
+import {
+  selectParticipants,
+  selectAreParticipantLoading,
+} from "../../redux/participants/selectors";
 import { useParams } from "react-router-dom";
 
 const EventsParticipantsPage = () => {
@@ -12,16 +14,20 @@ const EventsParticipantsPage = () => {
   const { eventId } = useParams();
 
   useEffect(() => {
-    dispatch(fetchParticipants({ eventId: eventId }));
+    dispatch(fetchParticipants(eventId));
   }, [dispatch]);
 
   const fetchedParticipants = useSelector(selectParticipants).data;
-  console.log(fetchedParticipants);
 
+  const isLoading = useSelector(selectAreParticipantLoading);
   return (
     <>
-      <NameOfThePage />
-      <ParticipantsList />
+      <h1>EventsParticipantsPage</h1>
+      {isLoading ? (
+        <p>Wait pls</p>
+      ) : (
+        <ParticipantsList fetchedParticipants={fetchedParticipants} />
+      )}
     </>
   );
 };

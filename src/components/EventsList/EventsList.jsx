@@ -15,6 +15,8 @@ const EventsList = ({ fetchedEvents }) => {
               id={event._id}
               title={event.title}
               desc={event.description}
+              event_date={event.event_date}
+              organizer={event.organizer}
             />
           </li>
         );

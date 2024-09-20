@@ -6,13 +6,14 @@ const ParrticipantsList = ({ fetchedParticipants }) => {
     return;
   }
 
+  const formatedData = fetchedParticipants[0].participants;
+
   return (
     <ul>
-      {fetchedParticipants.map((part) => {
+      {formatedData.map((part) => {
         return (
           <li key={part._id}>
             <ParticipantComponent
-              id={part._id}
               full_name={part.full_name}
               email={part.email}
             />

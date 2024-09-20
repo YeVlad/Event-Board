@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 
 import EventsList from "../../components/EventsList/EventsList";
-import NameOfThePage from "../../components/NameOfThePage/NameOfThePage";
-import axios from "axios";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchEvents } from "../../redux/events/operations";
@@ -20,17 +18,15 @@ const EventsBoardPage = () => {
   }, [dispatch]);
 
   const fetchedEvents = useSelector(selectEvents).data;
-  // console.log(fetchedEvents);
 
   const isLoading = useSelector(selectIsEventsLoading);
   const isError = useSelector(selectErrorEvents);
 
   return (
     <>
-      <NameOfThePage />
-      {!isError && <p>ERROR</p>}
+      <h1>EventsBoardPage</h1>
       {isLoading ? (
-        <p>Wair pls</p>
+        <p>Wait pls</p>
       ) : (
         <EventsList fetchedEvents={fetchedEvents} />
       )}

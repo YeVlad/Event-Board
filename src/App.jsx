@@ -10,13 +10,13 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/events" element={<EventsBoardPage />} />
+        <Route path="/" element={<EventsBoardPage />} />
         <Route
-          path="/events/registration/:eventId"
+          path="/registration/:eventId"
           element={<EventsRegistrationPage />}
         />
         <Route
-          path="/events/participants/:eventId"
+          path="/participants/:eventId"
           element={<EventsParticipantsPage />}
         />
         <Route path="*" element={<NotFoundPage />} />

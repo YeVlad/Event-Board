@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 import css from "./RegisterForm.module.css";
 import { useDispatch } from "react-redux";
-import { createParticipant } from "../../redux/events/operations";
+import { createParticipant } from "../../redux/participants/operations";
 
 const RegisterForm = () => {
   const fullnameField = useId();

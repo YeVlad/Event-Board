@@ -9,7 +9,6 @@ const EventsList = ({ fetchedEvents }) => {
   return (
     <ul>
       {fetchedEvents.map((event) => {
-        console.log(event);
         return (
           <li key={event._id}>
             <EventComponent

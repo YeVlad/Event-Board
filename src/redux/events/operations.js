@@ -14,17 +14,3 @@ export const fetchEvents = createAsyncThunk(
     }
   }
 );
-
-export const createParticipant = createAsyncThunk(
-  "particiant/createOne",
-  async (objOfData, thunkAPI) => {
-    try {
-      console.log(objOfData);
-
-      const response = await axios.put("/participant", objOfData);
-      return response.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
-    }
-  }
-);

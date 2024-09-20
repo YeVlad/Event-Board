@@ -10,7 +10,8 @@ const eventsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchEvents.pending, (state, action) => {
+      // fetch events
+      .addCase(fetchEvents.pending, (state) => {
         state.isLoading = true;
       })
       .addCase(fetchEvents.fulfilled, (state, action) => {

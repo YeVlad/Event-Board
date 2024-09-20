@@ -1,5 +1,11 @@
+import NameOfThePage from "../../components/NameOfThePage/NameOfThePage";
+
 const EventsParticipantsPage = () => {
-  return <>EventsParticipantsPage</>;
+  return (
+    <>
+      <NameOfThePage />
+    </>
+  );
 };
 
 export default EventsParticipantsPage;

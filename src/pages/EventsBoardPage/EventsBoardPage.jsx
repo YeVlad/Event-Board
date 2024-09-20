@@ -23,9 +23,12 @@ const EventsBoardPage = () => {
   // console.log(fetchedEvents);
 
   const isLoading = useSelector(selectIsEventsLoading);
+  const isError = useSelector(selectErrorEvents);
+
   return (
     <>
       <NameOfThePage />
+      {!isError && <p>ERROR</p>}
       {isLoading ? (
         <p>Wair pls</p>
       ) : (

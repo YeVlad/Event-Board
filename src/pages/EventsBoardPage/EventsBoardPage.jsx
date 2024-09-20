@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import EventsList from "../../components/EventsList/EventsList";
 
@@ -7,20 +7,20 @@ import { fetchEvents } from "../../redux/events/operations";
 import {
   selectEvents,
   selectIsEventsLoading,
-  selectErrorEvents,
 } from "../../redux/events/selectors.js";
+import PagSystem from "../../components/PagSystem/PagSystem.jsx";
 
 const EventsBoardPage = () => {
+  const [page, setPage] = useState(1);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchEvents());
+    dispatch(fetchEvents(page));
   }, [dispatch]);
 
   const fetchedEvents = useSelector(selectEvents).data;
 
   const isLoading = useSelector(selectIsEventsLoading);
-  const isError = useSelector(selectErrorEvents);
 
   return (
     <>
@@ -28,7 +28,10 @@ const EventsBoardPage = () => {
       {isLoading ? (
         <p>Wait pls</p>
       ) : (
-        <EventsList fetchedEvents={fetchedEvents} />
+        <>
+          <PagSystem />
+          <EventsList fetchedEvents={fetchedEvents} />
+        </>
       )}
     </>
   );

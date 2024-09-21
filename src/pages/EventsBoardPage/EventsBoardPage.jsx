@@ -21,7 +21,6 @@ const EventsBoardPage = () => {
 
   useEffect(() => {
     dispatch(fetchEvents([page, sort]));
-    console.log(sort);
   }, [dispatch, page, sort]);
 
   const fetchedEvents = useSelector(selectEvents).data;

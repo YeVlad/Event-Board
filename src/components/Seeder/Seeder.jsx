@@ -9,13 +9,13 @@ import { useDispatch } from "react-redux";
 const Seeder = () => {
   const exempleSeed = JSON.stringify([
     {
-      title: "Test5",
+      title: "AAAA",
       description: "testEvent8",
       event_date: "2000-01-01",
       organizer: "I",
     },
     {
-      title: "TestForSure2",
+      title: "BBBB",
       description: "testEvent00",
       event_date: "2000-01-01",
       organizer: "I",
@@ -25,7 +25,7 @@ const Seeder = () => {
   const seederField = useId();
   const dispatch = useDispatch();
   function handleSubmit(value, actions) {
-    const newArr = JSON.parse(value.seed);
+    let newArr = JSON.parse(value.seed);
     dispatch(addEvents(newArr));
   }
   return (

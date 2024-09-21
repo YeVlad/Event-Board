@@ -19,10 +19,10 @@ export const addEvents = createAsyncThunk(
   "events/addSome",
   async (array, thunkAPI) => {
     try {
-      const readyArray = JSON.stringify(array);
-      console.log(readyArray);
+      console.log(array);
 
-      const response = await axios.post(`/events`, readyArray);
+      const response = await axios.post(`/events`, array);
+
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

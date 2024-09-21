@@ -10,7 +10,10 @@ const ParrticipantsList = ({ fetchedParticipants, filter }) => {
   return (
     <ul className="parti">
       {formatedData.map((part) => {
-        if (part.full_name.includes(filter) || part.email.includes(filter)) {
+        if (
+          part.full_name.toLowerCase().includes(filter.toLowerCase()) ||
+          part.email.toLowerCase().includes(filter.toLowerCase())
+        ) {
           return (
             <li key={part._id}>
               <ParticipantComponent

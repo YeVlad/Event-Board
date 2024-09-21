@@ -4,7 +4,7 @@ import css from "./EventComponent.module.css";
 const EventComponent = ({ id, title, desc, event_date, organizer }) => {
   return (
     <div className={css.event_card}>
-      <h3 className={css.event_name}>{title}</h3>
+      <h3 className="red">{title}</h3>
       <p>{desc}</p>
       <p>{event_date}</p>
       <p>Organizer: {organizer}</p>

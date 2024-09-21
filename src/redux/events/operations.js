@@ -5,9 +5,13 @@ axios.defaults.baseURL = "https://event-board-b.onrender.com";
 
 export const fetchEvents = createAsyncThunk(
   "events/getAll",
-  async (page, sort, thunkAPI) => {
+  async ([page, sort], thunkAPI) => {
     try {
-      const response = await axios.get(`/events/${page}`, sort);
+      const requestParams = { sortBy: sort };
+
+      const response = await axios.get(`/events/${page}`, {
+        params: requestParams,
+      });
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

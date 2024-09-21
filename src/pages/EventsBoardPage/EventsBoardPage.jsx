@@ -20,7 +20,7 @@ const EventsBoardPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchEvents(page, sort));
+    dispatch(fetchEvents([page, sort]));
     console.log(sort);
   }, [dispatch, page, sort]);
 

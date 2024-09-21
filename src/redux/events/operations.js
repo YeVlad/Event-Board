@@ -14,3 +14,18 @@ export const fetchEvents = createAsyncThunk(
     }
   }
 );
+
+export const addEvents = createAsyncThunk(
+  "events/addSome",
+  async (array, thunkAPI) => {
+    try {
+      const readyArray = JSON.stringify(array);
+      console.log(readyArray);
+
+      const response = await axios.post(`/events`, readyArray);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

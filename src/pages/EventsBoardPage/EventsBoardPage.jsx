@@ -9,6 +9,7 @@ import {
   selectIsEventsLoading,
 } from "../../redux/events/selectors.js";
 import PagSystem from "../../components/PagSystem/PagSystem.jsx";
+import Seeder from "../../components/Seeder/Seeder.jsx";
 
 const EventsBoardPage = () => {
   const [page, setPage] = useState(1);
@@ -44,6 +45,7 @@ const EventsBoardPage = () => {
           />
           <EventsList fetchedEvents={fetchedEvents} />
           {page != 1 && fetchedEvents.length == 0 && <h2>Go back pls :)</h2>}
+          <Seeder />
         </>
       )}
     </>

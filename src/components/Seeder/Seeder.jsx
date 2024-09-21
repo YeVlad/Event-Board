@@ -27,6 +27,7 @@ const Seeder = () => {
   function handleSubmit(value, actions) {
     let newArr = JSON.parse(value.seed);
     dispatch(addEvents(newArr));
+    actions.resetForm();
   }
   return (
     <>

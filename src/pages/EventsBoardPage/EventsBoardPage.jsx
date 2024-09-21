@@ -10,14 +10,19 @@ import {
 } from "../../redux/events/selectors.js";
 import PagSystem from "../../components/PagSystem/PagSystem.jsx";
 import Seeder from "../../components/Seeder/Seeder.jsx";
+import SorterEvents from "../../components/SorterEvents/SorterEvents.jsx";
+
+import css from "./EventsBoardPage.module.css";
 
 const EventsBoardPage = () => {
   const [page, setPage] = useState(1);
+  const [sort, setSort] = useState("title");
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchEvents(page));
-  }, [dispatch, page]);
+    console.log(sort);
+  }, [dispatch, page, sort]);
 
   const fetchedEvents = useSelector(selectEvents).data;
 
@@ -31,6 +36,10 @@ const EventsBoardPage = () => {
     setPage(page - 1);
   }
 
+  function onChangeP(event) {
+    setSort(event.target.value);
+  }
+
   return (
     <>
       <h1>EventsBoardPage</h1>
@@ -38,11 +47,14 @@ const EventsBoardPage = () => {
         <p>Wait pls</p>
       ) : (
         <>
-          <PagSystem
-            page={page}
-            setNextPage={setNextPage}
-            setPrevPage={setPrevPage}
-          />
+          <div className={css.up_menu}>
+            <PagSystem
+              page={page}
+              setNextPage={setNextPage}
+              setPrevPage={setPrevPage}
+            />
+            <SorterEvents onChangeP={onChangeP} />
+          </div>
           <EventsList fetchedEvents={fetchedEvents} />
           {page != 1 && fetchedEvents.length == 0 && <h2>Go back pls :)</h2>}
           <Seeder />

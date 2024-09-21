@@ -61,13 +61,15 @@ const RegisterForm = () => {
       onSubmit={handleSubmit}
       validationSchema={formSchema}
     >
-      <Form className={css.form_frame}>
+      <Form className="form_frame">
         <label htmlFor={fullnameField}>Full name</label>
         <Field type="text" name="full_name" id={fullnameField} />
-        <ErrorMessage name="full_name" component="span" className={css.error} />
+        <ErrorMessage name="full_name" component="span" className="error" />
+
         <label htmlFor={emailField}>Email</label>
         <Field type="email" name="email" id={emailField} />
-        <ErrorMessage name="email" component="span" className={css.error} />
+        <ErrorMessage name="email" component="span" className="error" />
+
         <label htmlFor={dateOfBirthField}>Date of birth</label>
         <DatePicker
           selected={startDate}
@@ -78,7 +80,7 @@ const RegisterForm = () => {
           popperPlacement="top-end"
         />
         <label>Where did you hear about this event?</label>
-        <div className={css.radio_group}>
+        <div className="radio_group">
           <label>
             <Field type="radio" name="how_found" value="Social media" />
             Social media

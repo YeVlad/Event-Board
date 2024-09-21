@@ -46,7 +46,7 @@ const EventsBoardPage = () => {
         <p>Wait pls</p>
       ) : (
         <>
-          <div className={css.up_menu}>
+          <div className="up_menu">
             <PagSystem
               page={page}
               setNextPage={setNextPage}

@@ -1,6 +1,5 @@
 import EventComponent from "../EventComponent/EventComponent";
 
-import css from "./EventsList.module.css";
 const EventsList = ({ fetchedEvents }) => {
   if (!fetchedEvents || fetchedEvents.length === 0) {
     return;

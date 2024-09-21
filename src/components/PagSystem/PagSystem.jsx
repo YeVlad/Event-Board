@@ -1,16 +1,14 @@
-import css from "./PagSystem.module.css";
-
 const PagSystem = ({ page, setNextPage, setPrevPage }) => {
   return (
-    <div className={css.pag_div}>
+    <div className="pag_div">
       {page != 1 ? (
-        <button className={css.button_pag} onClick={setPrevPage}>
+        <button className="button_pag" onClick={setPrevPage}>
           Back
         </button>
       ) : (
         <div></div>
       )}
-      <button className={css.button_pag} onClick={setNextPage}>
+      <button className="button_pag" onClick={setNextPage}>
         Next
       </button>
     </div>

@@ -1,6 +1,5 @@
 import ParticipantComponent from "../ParticipantComponent/ParticipantComponent ";
 
-import css from "./ParticipantsList.module.css";
 const ParrticipantsList = ({ fetchedParticipants, filter }) => {
   if (!fetchedParticipants || fetchedParticipants.length === 0) {
     return;

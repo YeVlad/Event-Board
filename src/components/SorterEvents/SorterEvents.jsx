@@ -1,14 +1,12 @@
 import { Field, Form, Formik } from "formik";
 
-import css from "./SorterEvents.module.css";
-
 const SorterEvents = ({ onChangeP }) => {
   return (
     <>
       <Formik initialValues={{}}>
-        <Form className={css.filter_form}>
+        <Form className="filter_form">
           <Field
-            className={css.field}
+            className="field"
             as="select"
             name="selectedOption"
             id="selectedOption"

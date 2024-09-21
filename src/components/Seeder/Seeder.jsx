@@ -32,7 +32,7 @@ const Seeder = () => {
   return (
     <>
       <Formik initialValues={{ seed: "" }} onSubmit={handleSubmit}>
-        <Form className={css.seed_form}>
+        <Form className="seed_form">
           <label htmlFor={seederField}>Seed</label>
           <Field type="text" name="seed" id={seederField} />
           <button type="submit">Submit</button>

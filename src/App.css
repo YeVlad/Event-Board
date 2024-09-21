@@ -1,3 +1,8 @@
+html {
+  background: #edf1d9;
+  font-family: Georgia, Times, serif;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -9,8 +14,27 @@ ul {
   gap: 25px;
 }
 
+h3 {
+  font-size: 22px;
+}
+
+.small_text {
+  font-size: 18px;
+}
+
+.listOf {
+  gap: 40px;
+  margin-left: 40px;
+}
+
 .event_card {
-  border: 2px solid black;
+  border: 2px solid rgb(120, 5, 5);
+  border-bottom-left-radius: 35px;
+  border-top-right-radius: 37px;
+
+  box-shadow: 9px -2px 4px;
+
+  background: #ee9898;
 
   min-width: 200px;
 
@@ -34,11 +58,15 @@ ul {
 }
 
 .part_card {
-  border: 2px solid black;
+  border: 1px solid black;
 
   min-width: 200px;
 
   padding: 20px;
+
+  background: #b6bafa;
+
+  box-shadow: 9px -2px 4px;
 }
 
 .form_frame {
@@ -46,6 +74,12 @@ ul {
 
   display: flex;
   flex-direction: column;
+  padding: 30px 20px;
+  border-radius: 20px;
+  width: 500px;
+  margin: 100px auto;
+
+  background: #c1eaaa;
 }
 
 .error {
@@ -70,4 +104,42 @@ ul {
 .up_menu {
   display: flex;
   gap: 50px;
+  margin-left: 80px;
+}
+
+.button_pag {
+  height: 40px;
+  text-shadow: 1px 1px 8px;
+  border-radius: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.field {
+  height: 30px;
+  font-size: 15px;
+}
+
+.parti {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.forFil {
+  margin-left: 50px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.filter {
+  height: 20px;
+}
+
+.needMar {
+  margin-bottom: 20px;
 }

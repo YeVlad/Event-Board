@@ -40,7 +40,7 @@ const EventsBoardPage = () => {
   }
 
   return (
-    <>
+    <div className="page_style">
       <h1>EventsBoardPage</h1>
       {isLoading ? (
         <p>Wait pls</p>
@@ -59,7 +59,7 @@ const EventsBoardPage = () => {
           <Seeder />
         </>
       )}
-    </>
+    </div>
   );
 };
 

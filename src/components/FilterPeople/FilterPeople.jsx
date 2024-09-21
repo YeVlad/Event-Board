@@ -3,9 +3,10 @@ const FilterPeople = ({ changeFilter }) => {
     changeFilter(value);
   }
   return (
-    <>
-      Filter <input type="text" onChange={handlechangeFilter} />
-    </>
+    <div className="forFil">
+      <p className="small_text"> Filter</p>
+      <input type="text" onChange={handlechangeFilter} className="filter" />
+    </div>
   );
 };
 

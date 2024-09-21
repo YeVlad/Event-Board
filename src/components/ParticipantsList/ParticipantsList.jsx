@@ -8,7 +8,7 @@ const ParrticipantsList = ({ fetchedParticipants, filter }) => {
   const formatedData = fetchedParticipants[0].participants;
 
   return (
-    <ul>
+    <ul className="parti">
       {formatedData.map((part) => {
         if (part.full_name.includes(filter) || part.email.includes(filter)) {
           return (

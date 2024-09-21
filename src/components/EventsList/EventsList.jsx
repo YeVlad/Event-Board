@@ -6,7 +6,7 @@ const EventsList = ({ fetchedEvents }) => {
   }
 
   return (
-    <ul>
+    <ul className="listOf">
       {fetchedEvents.map((event) => {
         return (
           <li key={event._id}>

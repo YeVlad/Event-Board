@@ -5,7 +5,6 @@ import { ErrorMessage } from "formik";
 
 import { useParams } from "react-router-dom";
 
-import css from "./RegisterForm.module.css";
 import { useDispatch } from "react-redux";
 import { createParticipant } from "../../redux/participants/operations";
 
@@ -62,15 +61,26 @@ const RegisterForm = () => {
       validationSchema={formSchema}
     >
       <Form className="form_frame">
-        <label htmlFor={fullnameField}>Full name</label>
-        <Field type="text" name="full_name" id={fullnameField} />
+        <label htmlFor={fullnameField} className="small_text">
+          Full name
+        </label>
+        <Field
+          type="text"
+          name="full_name"
+          id={fullnameField}
+          className="needMar"
+        />
         <ErrorMessage name="full_name" component="span" className="error" />
 
-        <label htmlFor={emailField}>Email</label>
-        <Field type="email" name="email" id={emailField} />
+        <label htmlFor={emailField} className="small_text">
+          Email
+        </label>
+        <Field type="email" name="email" id={emailField} className="needMar" />
         <ErrorMessage name="email" component="span" className="error" />
 
-        <label htmlFor={dateOfBirthField}>Date of birth</label>
+        <label htmlFor={dateOfBirthField} className="small_text">
+          Date of birth
+        </label>
         <DatePicker
           selected={startDate}
           onChange={(date) => setStartDate(date)}
@@ -78,23 +88,43 @@ const RegisterForm = () => {
           name="dateOfBirth"
           id={dateOfBirthField}
           popperPlacement="top-end"
+          className="needMar"
         />
-        <label>Where did you hear about this event?</label>
+        <label className="small_text, needMar">
+          Where did you hear about this event?
+        </label>
         <div className="radio_group">
-          <label>
-            <Field type="radio" name="how_found" value="Social media" />
+          <label className="small_text">
+            <Field
+              type="radio"
+              name="how_found"
+              value="Social media"
+              className="needMar"
+            />
             Social media
           </label>
-          <label>
-            <Field type="radio" name="how_found" value="Friends" />
+          <label className="small_text">
+            <Field
+              type="radio"
+              name="how_found"
+              value="Friends"
+              className="needMar"
+            />
             Friends
           </label>
-          <label>
-            <Field type="radio" name="how_found" value="Found myself" />
+          <label className="small_text, needMar">
+            <Field
+              type="radio"
+              name="how_found"
+              value="Found myself"
+              className="needMar"
+            />
             Found myself
           </label>
         </div>
-        <button type="submit">Submit</button>
+        <button className="small_text" type="submit">
+          Submit
+        </button>
       </Form>
     </Formik>
   );
